@@ -6,62 +6,51 @@ lavalink:
   server:
     password: asuka123
     sources:
-      youtube: false # Ya no se usa, el plugin lo maneja
+      # ... fuentes de audio básicas ...
+      youtube: false 
       bandcamp: true
-      soundcloud: true
-      twitch: true
-      vimeo: true
-      http: true
+      # ...
+    # --- 1. PLUGINS DE CARGA ---
+    plugins:
+      - dependency: "dev.lavalink.youtube:youtube-plugin:1.15.0"
+        snapshot: false
+      - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.1"
+        repository: "https://maven.lavalink.dev/releases"
+        snapshot: false
 
-  plugins:
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.15.0"
-      snapshot: false
-    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.1"
-      repository: "https://maven.lavalink.dev/releases"
-      snapshot: false
-
-# --- CONFIGURACIÓN DE PLUGINS (AQUÍ ESTÁ LA CLAVE DEL DESBLOQUEO) ---
+# 2. CONFIGURACIÓN DE PLUGINS (Debe estar al mismo nivel que 'lavalink:')
+#    OJO: LA SANGRÍA ES CLAVE. NO HAY ESPACIO EXTRA AQUÍ.
 plugins:
- youtube:
+  youtube:
     enabled: true
     allowSearch: true
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
-    
-    # 1. EL VERDADERO LUGAR DEL POTOKEN (Debe ser un objeto anidado)
-    #    Vamos a usar un cliente web simple.
-    clients:
-      - clientName: WEB
-        clientVersion: "2.20240901.00.00"
-        pot: "MnUyNDR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5Yg=="
-        visitorData: "Cgs1aTRrNWEwSDhfQSinwf7IBjIKCgJNWBIEGgAgLQ%3D%3D"
-    
-    # 2. Tu configuración OAuth (Esto está bien, solo lo movemos al final)
+    pot: "MnUyNDR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5Yg=="
+    visitorData: "Cgs1aTRrNWEwSDhfQSinwf7IBjIKCgJNWBIEGgAgLQ%3D%3D"
     oauth:
       enabled: true
       refreshToken: "TU_REFRESH_TOKEN_LARGO"
       skipInitialization: true
 
   lavasrc:
-    # Orden de resolución preferido (Esto también ayuda con las búsquedas)
     providers: 
       - 'ytmsearch:"%ISRC%"'
       - 'ytmsearch:%QUERY%'
       - 'ytsearch:"%ISRC%"'
       - 'ytsearch:%QUERY%'
       - 'scsearch:%QUERY%'
-
     sources:
       spotify: true
       applemusic: false
       deezer: false
-
     spotify:
       clientId: "e5a80e386fce460bb3ff226e7eb32642"
       clientSecret: "3123ca9c43d945f781807a83bf07a5c3"
       countryCode: "MX"
       playlistLoadLimit: 200
       albumLoadLimit: 200
+
 
 
 

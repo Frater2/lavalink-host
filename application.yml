@@ -6,7 +6,7 @@ lavalink:
   server:
     password: asuka123
     sources:
-      youtube: false # desactivado porque usas plugin moderno
+      youtube: false # Ya no se usa, el plugin lo maneja
       bandcamp: true
       soundcloud: true
       twitch: true
@@ -20,20 +20,25 @@ lavalink:
       repository: "https://maven.lavalink.dev/releases"
       snapshot: false
 
+# --- CONFIGURACIÓN DE PLUGINS (AQUÍ ESTÁ LA CLAVE DEL DESBLOQUEO) ---
 plugins:
   youtube:
     enabled: true
     allowSearch: true
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
+    # --- CÓDIGOS DE DESBLOQUEO para bypassear el Login ---
+    pot: "MnUyNDR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5YjR4ZGx5Yg=="
+    visitorData: "Cgs1aTRrNWEwSDhfQSinwf7IBjIKCgJNWBIEGgAgLQ%3D%3D"
+    # --------------------------------------------------------
     oauth:
       enabled: true
       refreshToken: "1//0fWfEkHL2A33-CgYIARAAGA8SNwF-L9IrB1MeLQa08MZrUu0ua5tNIpvY1h15yZgZ0_KrABJ8PuLT94X_ALpI3nJY-CQHHM5ai6I"
       skipInitialization: true
 
   lavasrc:
-    # Orden de resolución preferido
-    providers:
+    # Orden de resolución preferido (Esto también ayuda con las búsquedas)
+    providers: 
       - 'ytmsearch:"%ISRC%"'
       - 'ytmsearch:%QUERY%'
       - 'ytsearch:"%ISRC%"'
@@ -51,6 +56,7 @@ plugins:
       countryCode: "MX"
       playlistLoadLimit: 200
       albumLoadLimit: 200
+
 
 
 

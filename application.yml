@@ -6,11 +6,11 @@ lavalink:
   server:
     password: asuka123
     sources:
-      # ... fuentes de audio básicas ...
+      
       youtube: false 
       bandcamp: true
-      # ...
-    # --- 1. PLUGINS DE CARGA ---
+      
+   
     plugins:
       - dependency: "dev.lavalink.youtube:youtube-plugin:1.15.0"
         snapshot: false
@@ -18,8 +18,8 @@ lavalink:
         repository: "https://maven.lavalink.dev/releases"
         snapshot: false
 
-# 2. CONFIGURACIÓN DE PLUGINS (Debe estar al mismo nivel que 'lavalink:')
-#    OJO: LA SANGRÍA ES CLAVE. NO HAY ESPACIO EXTRA AQUÍ.
+# //////////////////
+# //////////////////
 plugins:
   youtube:
     enabled: true
@@ -50,6 +50,7 @@ plugins:
       countryCode: "MX"
       playlistLoadLimit: 200
       albumLoadLimit: 200
+
 
 
 

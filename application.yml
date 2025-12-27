@@ -6,7 +6,7 @@ lavalink:
   server:
     password: "asuka123"
     sources:
-      youtube: false      
+      youtube: false
       bandcamp: true
       soundcloud: true
       twitch: true
@@ -27,16 +27,15 @@ plugins:
     allowSearch: true
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
-   
     
     oauth:
-      enabled: false      
+      enabled: false
       skipInitialization: true
 
   lavasrc:
     providers: 
       - 'scsearch:"%ISRC%"'   
-      - 'scsearch:%QUERY%'   
+      - 'scsearch:%QUERY%'    
       - 'ytmsearch:"%ISRC%"'
       - 'ytmsearch:%QUERY%'
       - 'ytsearch:"%ISRC%"'
@@ -45,7 +44,7 @@ plugins:
     sources:
       spotify: true
       applemusic: true
-      deezer: true
+      deezer: false       
       yandexmusic: false
       flowerytts: false
       youtube: false
@@ -56,6 +55,7 @@ plugins:
       countryCode: "MX"
       playlistLoadLimit: 200
       albumLoadLimit: 200
+
 
 
 
